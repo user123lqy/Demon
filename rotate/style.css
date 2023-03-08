@@ -1,0 +1,32 @@
+.container{
+    width: 800px;
+    height: 500px;
+    margin: 100px auto;
+    /* display: flex;
+    justify-content: center;
+    align-content: center; */
+}
+.card img{
+    width: 800px;
+    height: 500px;
+
+}
+.card{
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    /* transform: perspective(50px); */
+    perspective: 150px;
+}
+.card-flip{
+    transform: rotateY(180deg);
+}
+.card-front{
+    position: absolute;
+    backface-visibility: hidden;
+}
+.card-back{
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+ 

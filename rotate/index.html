@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-front">
+                <img src="images/darkNight.jpg" alt="">
+            </div>
+            <div class="card-back">
+                <img src="images/forest.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        const card=document.querySelector('.card');
+        card.addEventListener('click',()=>{
+            card.classList.toggle('card-flip');
+        });
+    </script>
+</body>
+</html>
