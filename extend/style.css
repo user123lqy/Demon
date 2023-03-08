@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+/* 从fonts.googleapis.com中寻找自定义字体 */
+*{
+    box-sizing: border-box;
+    /*width、height属性设置的是盒子模型中边框区域所形成的盒子的宽高*/
+}
+body{
+    font-family: 'Muli',sans-serif;
+    display: flex;
+    /* 其子元素以弹性布局的特征在body元素中排列 */
+    align-items: center;
+    /* 设侧轴（y轴）上子元素的排列方式，即垂直居中 */
+    justify-content: center;
+    /* 设置主轴（x轴）上子元素的排列方式，即水平居中 */
+    height: 100vh;
+    /* body元素的高度为100个垂直视区 */
+    overflow: hidden;
+    /* 对于溢出的处理方式，同时触发BFC，body元素生成一个独立的渲染区域*/
+    margin: 0;
+}
+.container{
+    display: flex;
+    /* 使得元素生成一个FFC区域，生成独立的渲染空间，空间中元素的布局要遵循FFC区域的规则 */
+    width: 90vw;
+    /* 该div元素在其父元素body元素中以弹性布局的规则放置，并且div元素垂直和水平居中于body元素，并且未占满body元素，在上下区域留白 */
+}
+.panel{
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    border-radius: 50px;
+    color:#fff;
+    cursor: pointer;
+    flex:0.5;
+    margin: 10px;
+    position: relative;
+    transition: all 700ms ease-in;
+}
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left:20px;
+    margin: 0;
+    opacity: 0;
+    /* 透明度为0，即完全透明 */
+    /* 子绝父相的作用：子元素相对于父元素定位，并且希望父元素不脱离文档流。 */
+}
+.panel.active{
+    flex:5;
+}
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+@media (max-width:480px) {
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+    display:none;
+    }
+}
+
