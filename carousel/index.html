@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="images-box">
+            <div class="images-box-cell"><img src="images/878961833315c642a487e2ba0edc5364.jpg" alt=""></div>
+            <div class="images-box-cell"><img src="images/92cebf11df343ed975d35e7c48025091.jpg" alt=""></div>
+            <div class="images-box-cell"><img src="images/19b3187ba671ed110cd23f3d99618bef.jpeg" alt=""></div>
+            <div class="images-box-cell"><img src="images/darkNight.jpg" alt=""></div>
+            <div class="images-box-cell"><img src="images/forest.jpeg" alt=""></div>
+            <div class="images-box-cell"><img src="images/rose.jpg" alt=""></div>
+            <div class="images-box-cell"><img src="images/smallFlower.jpg" alt=""></div>
+            <div class="images-box-cell"><img src="images/sunFlower.jpeg" alt=""></div>
+            <div class="images-box-cell"><img src="images/waterfall.jpg" alt=""></div>
+        </div>
+        <div class="bt">
+            <button id="prev">上一张</button>
+            <button id="next">下一张</button>
+        </div>
+    </div>
+    <script>
+        const imageBox=document.querySelector('.images-box');
+        const prev=document.querySelector('#prev');
+        const next=document.querySelector('#next');
+        const count=9;
+        let index=0;
+        function rotateAll(){
+            let angle=index/9*360;
+            imageBox.style.transform='translateZ(-550px) rotateY('+angle+'deg)';
+        }
+        prev.addEventListener('click',()=>{
+            index--;
+            rotateAll();
+        });
+        next.addEventListener('click',()=>{
+            index++;
+            rotateAll();
+        });
+    </script>
+</body>
+</html>
